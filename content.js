@@ -1,8 +1,6 @@
-chrome.runtime.onMessage.addListener(
-  function(request, sender, sendResponse) {
-    if( request.message === "clicked_browser_action" ) {
-      var firstHref = $("a[href^='http']").eq(0).attr("href");
-      chrome.runtime.sendMessage({"message": "open_new_tab", "url": firstHref});
-    }
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+  if (request.message === "make_changes_to_page") {
+    // Query and Make changes to page here.
+    var firstInputValue = $("input").eq(0).val();
   }
-);
+});
